@@ -11,25 +11,32 @@
     "lint:fix": "\"node_modules/.bin/tslint\" -c tslint.json 'src/**/*.{ts,tsx}' -e 'node_modules/**' --fix",
     "precommit": "yarn lint:fix",
     "postinstall": "yarn build",
+    "serve": "node server --port=9040",
     "watch": "\"node_modules/.bin/webpack\" --watch"
   },
   "dependencies": {
+    "elasticsearch": "^13.3.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
+    "@types/elasticsearch": "^5.0.17",
     "@types/node": "^8.0.46",
     "@types/react": "^16.0.18",
     "@types/react-dom": "^16.0.2",
     "awesome-typescript-loader": "^3.2.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
     "husky": "^0.14.3",
+    "nodemon": "^1.12.1",
     "source-map-loader": "^0.2.1",
     "tslint": "^5.6.0",
     "tslint-config-airbnb": "^5.2.1",
     "tslint-eslint-rules": "^4.1.1",
     "tslint-react": "^3.2.0",
     "typescript": "^2.4.2",
-    "webpack": "^3.5.5"
+    "webpack": "^3.5.5",
+    "yargs": "^9.0.1"
   },
   "repository": {
     "type": "git",

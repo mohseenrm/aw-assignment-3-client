@@ -15,11 +15,7 @@ app.use(express.static(
 ));
 
 app.get('/', (request, response) => {
-  response.sendFile(
-		path.join(
-			'index.html'
-		)
-	);
+  response.sendFile(path.join('index.html'));
 });
 
 app.set('port', process.env.PORT || argv.port || 8080);

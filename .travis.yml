@@ -1,0 +1,25 @@
+language: node_js
+
+dist: trusty
+
+os:
+  - linux
+  - osx
+
+node_js:
+  - 8
+cache:
+  directories:
+    - "node_modules"
+
+before_install:
+  - npm i -g yarn
+  - yarn clean
+
+install:
+  - yarn
+
+script:
+  - yarn lint
+
+sudo: false

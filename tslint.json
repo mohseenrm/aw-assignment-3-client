@@ -1,0 +1,68 @@
+{
+	"extends": [
+		"tslint-config-airbnb", 
+		"tslint-eslint-rules",
+		"tslint-react"
+	],
+	"rules": {
+    // override tslint-react rules here
+		"jsx-wrap-multiline": false,
+		"jsx-no-multiline-js": false,
+		"jsx-key": false,
+		"no-require-imports": true,
+		"align": [
+				true, 
+				"parameters", 
+				"statements"
+		],
+		"no-irregular-whitespace": true,
+		"no-trailing-whitespace": true,
+		"semicolon": [
+				true, 
+				"always"
+		],
+		"space-before-function-paren": [
+				true, 
+				"always"
+		],
+		"whitespace": [
+				true, 
+				"check-branch", 
+				"check-operator", 
+				"check-typecast",
+				"check-decl",
+				"check-module",
+				"check-preblock",
+				"check-separator"
+		],
+		"no-console": [
+				false
+		],
+		"no-var-keyword": true,
+		"switch-default": true,
+		"triple-equals": true,
+		"eofline": true,
+		"arrow-return-shorthand": true,
+		"no-consecutive-blank-lines": true,
+		"object-literal-shorthand": true,
+		"space-in-parens": [
+			true,
+			"never"
+		],
+		"object-curly-spacing": [
+			true,
+			"always"
+		],
+		"ter-func-call-spacing": [
+			true, 
+			"never"
+		],
+		"array-bracket-spacing": [
+				true,
+				"always"
+		],
+		"max-line-length": [
+			false
+		]
+  }
+}

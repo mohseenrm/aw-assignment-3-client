@@ -1,0 +1,36 @@
+body {
+	/* base content styling */
+	font-family: $content-font;
+	font-size: 1.1rem;
+}
+
+/* ::selection{
+	background: $highlight-orange;
+	color: $off-white;
+}
+::-webkit-selection{
+	background: $highlight-orange;
+	color: $off-white;
+}
+::-moz-selection {
+  background: $highlight-orange;
+	color: $off-white;
+}
+::-webkit-input-placeholder {
+	color: $mid-grey;
+}
+::-moz-placeholder {
+	color: $mid-grey;
+}
+:-ms-input-placeholder {
+	color: $mid-grey;
+}
+:-moz-placeholder {
+	color: $mid-grey;
+} */
+
+/* input{
+	-webkit-user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+} */

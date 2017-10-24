@@ -13,7 +13,7 @@ app.use(express.static(
 		'..'
 	)
 ));
-
+// test
 app.get('/', (request, response) => {
   response.sendFile(path.join('index.html'));
 });

@@ -16,6 +16,7 @@
     "watch": "\"node_modules/.bin/webpack\" --watch"
   },
   "dependencies": {
+    "axios": "^0.17.0",
     "elasticsearch": "^13.3.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"

@@ -11,7 +11,6 @@ export class Posts extends React.Component < PostProps, any > {
   }
 
   onClickHandler (event: any) {
-    console.log('data: ', event.target.dataset.index);
     this.props.callbackParent(event.target.dataset.index);
   }
 
@@ -28,7 +27,11 @@ export class Posts extends React.Component < PostProps, any > {
 							// tslint:disable-next-line
 							return(
 								<List.Item>
-									<List.Icon name="stack overflow" size="large" verticalAlign="middle" />
+									<List.Icon
+										name="stack overflow"
+										size="large"
+										verticalAlign="middle"
+									/>
 									<List.Content>
 										<List.Header
 											as="a"

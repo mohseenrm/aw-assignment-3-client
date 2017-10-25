@@ -16,7 +16,7 @@ interface AppState {
     tags: string[];
     type: string;
   }];
-  selectedIndex: Number;
+  selectedIndex: number;
 }
 export class App extends React.Component < any, AppState > {
   constructor (props: any) {
@@ -66,7 +66,7 @@ export class App extends React.Component < any, AppState > {
     });
   }
 
-  updateSelectedIndex (selectedIndex: Number) {
+  updateSelectedIndex (selectedIndex: number) {
     this.setState(
       Object.assign(
         {},
@@ -74,6 +74,10 @@ export class App extends React.Component < any, AppState > {
         { selectedIndex },
       ),
     );
+  }
+
+  getTags (index: number) {
+    return this.state.appData[index].tags;
   }
 
   render () {
@@ -85,7 +89,7 @@ export class App extends React.Component < any, AppState > {
             postsData={this.state.appData}
           />
           <Response
-            tags={[ 'Sample' ]}
+            tags={this.getTags(this.state.selectedIndex)}
           />
         </div>
       );

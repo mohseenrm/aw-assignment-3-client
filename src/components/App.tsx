@@ -2,6 +2,8 @@ import * as React from 'react';
 import * as elasticsearch from 'elasticsearch';
 import axios from 'axios';
 
+import { Posts } from './Posts';
+
 const es = new elasticsearch.Client({
   host: 'http://ec2-18-221-242-218.us-east-2.compute.amazonaws.com:9200',
   log: 'trace',
@@ -60,7 +62,9 @@ export class App extends React.Component < any, any > {
     if (this.state && this.state.appData) {
       return(
         <div className="main-wrapper">
-          Hola {this.props.message}!
+          <Posts
+            postsData={this.state.appData.posts}
+          />
         </div>
       );
     }

@@ -3,6 +3,7 @@ import * as elasticsearch from 'elasticsearch';
 import axios from 'axios';
 
 import { Posts } from './Posts';
+import { Response } from './Response';
 
 const es = new elasticsearch.Client({
   host: 'http://ec2-18-221-242-218.us-east-2.compute.amazonaws.com:9200',
@@ -10,13 +11,13 @@ const es = new elasticsearch.Client({
 });
 
 interface AppState {
-  url? : string;
-  lastUrl?: string;
-  response?: any;
-  responseTime: string;
-  appData? : any;
+  appData? : [{
+    content: string;
+    tags: string[];
+    type: string;
+  }];
 }
-export class App extends React.Component < any, any > {
+export class App extends React.Component < any, AppState > {
   constructor (props: any) {
     super(props);
     this.state = {};
@@ -45,9 +46,11 @@ export class App extends React.Component < any, any > {
       url: 'https://cdn.rawgit.com/mohseenrm/cdn/1e38b579/jsons/posts.json',
     }).then((response: any) => {
       console.log('App data: ', response.data);
+
       const appData = {
-        appData: response.data,
+        appData: response.data.posts,
       };
+
       this.setState(
         Object.assign(
           {},
@@ -63,7 +66,10 @@ export class App extends React.Component < any, any > {
       return(
         <div className="main-wrapper">
           <Posts
-            postsData={this.state.appData.posts}
+            postsData={this.state.appData}
+          />
+          <Response
+            tags={[ 'Sample' ]}
           />
         </div>
       );

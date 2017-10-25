@@ -14,27 +14,21 @@ export class Posts extends React.Component < PostProps, any > {
 					divided={true}
 					relaxed={true}
 				>
-					<List.Item>
-						<List.Icon name="github" size="large" verticalAlign="middle" />
-						<List.Content>
-							<List.Header as="a">Semantic-Org/Semantic-UI</List.Header>
-							<List.Description as="a">Updated 10 mins ago</List.Description>
-						</List.Content>
-					</List.Item>
-					<List.Item>
-						<List.Icon name="github" size="large" verticalAlign="middle" />
-						<List.Content>
-							<List.Header as="a">Semantic-Org/Semantic-UI-Docs</List.Header>
-							<List.Description as="a">Updated 22 mins ago</List.Description>
-						</List.Content>
-					</List.Item>
-					<List.Item>
-						<List.Icon name="github" size="large" verticalAlign="middle" />
-						<List.Content>
-							<List.Header as="a">Semantic-Org/Semantic-UI-Meteor</List.Header>
-							<List.Description as="a">Updated 34 mins ago</List.Description>
-						</List.Content>
-					</List.Item>
+					{
+						this.props.postsData.map((post) => {
+							// tslint:disable-next-line
+							return(
+								<List.Item>
+									<List.Icon name="stack overflow" size="large" verticalAlign="middle" />
+									<List.Content>
+										<List.Header as="a">{post.content.slice(0, 30)}...</List.Header>
+										<List.Description as="a">{post.type}</List.Description>
+									</List.Content>
+								</List.Item>
+							);
+							// tslint:disable-next-line
+						})
+					}
 				</List>
       </div>
     );
@@ -42,5 +36,9 @@ export class Posts extends React.Component < PostProps, any > {
 }
 
 interface PostProps {
-  postsData : any;
+  postsData: [{
+    content: string;
+    tags: string[];
+    type: string;
+  }];
 }

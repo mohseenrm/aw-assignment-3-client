@@ -16,11 +16,16 @@ interface AppState {
     tags: string[];
     type: string;
   }];
+  selectedIndex: Number;
 }
 export class App extends React.Component < any, AppState > {
   constructor (props: any) {
     super(props);
-    this.state = {};
+    this.state = {
+      selectedIndex: 0,
+    };
+
+    this.updateSelectedIndex = this.updateSelectedIndex.bind(this);
   }
   // ES call example
   /* componentDidMount () {
@@ -61,11 +66,22 @@ export class App extends React.Component < any, AppState > {
     });
   }
 
+  updateSelectedIndex (selectedIndex: Number) {
+    this.setState(
+      Object.assign(
+        {},
+        this.state,
+        { selectedIndex },
+      ),
+    );
+  }
+
   render () {
     if (this.state && this.state.appData) {
       return(
         <div className="main-wrapper">
           <Posts
+            callbackParent={this.updateSelectedIndex}
             postsData={this.state.appData}
           />
           <Response

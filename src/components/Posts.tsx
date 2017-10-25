@@ -10,9 +10,9 @@ export class Posts extends React.Component < PostProps, any > {
 		/* tslint:enable */
   }
 
-  onClickHandler (event: Event) {
-    console.log('EVENT: ', event);
-    console.log('data: ', event.target);
+  onClickHandler (event: any) {
+    console.log('data: ', event.target.dataset.index);
+    this.props.callbackParent(event.target.dataset.index);
   }
 
   render () {
@@ -30,7 +30,12 @@ export class Posts extends React.Component < PostProps, any > {
 								<List.Item>
 									<List.Icon name="stack overflow" size="large" verticalAlign="middle" />
 									<List.Content>
-										<List.Header as="a" id={index}>{post.content.slice(0, 30)}...</List.Header>
+										<List.Header
+											as="a"
+											data-index={index}
+										>
+											{post.content.slice(0, 30)}...
+										</List.Header>
 										<List.Description as="a">{post.type}</List.Description>
 									</List.Content>
 								</List.Item>
@@ -45,6 +50,7 @@ export class Posts extends React.Component < PostProps, any > {
 }
 
 interface PostProps {
+  callbackParent: Function;
   postsData: [{
     content: string;
     tags: string[];

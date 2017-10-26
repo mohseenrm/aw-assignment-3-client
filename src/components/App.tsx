@@ -13,6 +13,7 @@ interface AppState {
   }];
   selectedIndex: number;
 }
+
 export class App extends React.Component < any, AppState > {
   constructor (props: any) {
     super(props);
@@ -21,6 +22,7 @@ export class App extends React.Component < any, AppState > {
     };
 
     this.updateSelectedIndex = this.updateSelectedIndex.bind(this);
+    // console.log('Skylight: ', SkyLight);
   }
 
   componentDidMount () {
@@ -45,7 +47,7 @@ export class App extends React.Component < any, AppState > {
   }
 
   updateSelectedIndex (selectedIndex: number) {
-    this.setState(
+    return this.setState(
       Object.assign(
         {},
         this.state,

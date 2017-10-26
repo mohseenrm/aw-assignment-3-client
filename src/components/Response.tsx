@@ -13,7 +13,7 @@ export class Response extends React.Component < ResponseProps, ResponseState > {
   }
 
   componentWillReceiveProps (props: ResponseProps) {
-    console.log('Response props: ', props);
+    // console.log('Response props: ', props);
     return es.search({
       index: 'wiki',
       type: 'items',
@@ -30,7 +30,7 @@ export class Response extends React.Component < ResponseProps, ResponseState > {
       },
     }).then((response) => {
       const esResults = response.hits.hits.map(result => result._source);
-      console.log(esResults);
+      // console.log(esResults);
       this.setState(
 				Object.assign(
 					{},
@@ -51,7 +51,7 @@ export class Response extends React.Component < ResponseProps, ResponseState > {
 
   render () {
     if (this.state && this.state.esResults) {
-      console.log('TEST: ', this.generateQueryString(this.props.tags));
+      // console.log('TEST: ', this.generateQueryString(this.props.tags));
       return(
 				<div className="main-wrapper--response">
 					<Segment inverted={true}>

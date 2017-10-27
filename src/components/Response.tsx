@@ -109,6 +109,7 @@ export class Response extends React.Component < ResponseProps, ResponseState > {
 					<Segment inverted={true}>
 						<Accordion inverted={true}>
 							{
+								/* tslint:disable */
 								esResults.map((result, index: number) => {
 									return(
 										<div>
@@ -130,6 +131,7 @@ export class Response extends React.Component < ResponseProps, ResponseState > {
 										</div>
 									);
 								})
+								/* tslint:enable */
 							}
 						</Accordion>
 					</Segment>

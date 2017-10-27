@@ -72,34 +72,6 @@ export class Response extends React.Component < ResponseProps, ResponseState > {
     });
   }
 
-  /* render () {
-    if (this.state && this.state.esResults) {
-      // console.log('TEST: ', this.generateQueryString(this.props.tags));
-      return(
-				<div className="main-wrapper--response">
-					<Segment inverted={true}>
-						<List divided={true} inverted={true} relaxed={true}>
-							{
-								this.state.esResults.map(result =>
-									<List.Item>
-										<List.Content>
-											<List.Header>{result.title.replace('[edit]', '')}</List.Header>
-											{result.content.slice(0, 50)}...
-										</List.Content>
-									</List.Item>,
-								)
-							}
-						</List>
-					</Segment>
-				</div>
-      );
-    }
-    return(
-			<div className="main-wrapper--response">
-				Click on post title to load results..
-			</div>
-    );
-	} */
   render () {
     const { activeIndex, esResults } = this.state;
 
@@ -140,7 +112,9 @@ export class Response extends React.Component < ResponseProps, ResponseState > {
     }
     return(
 			<div className="main-wrapper--response">
-				Click on post title to load results..
+				<p className="main-wrapper--loading">
+					Click on post title to load results..
+				</p>
 			</div>
     );
   }

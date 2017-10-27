@@ -76,7 +76,9 @@ export class App extends React.Component < any, AppState > {
     }
     return(
       <div className="main-wrapper">
-        Loading...
+        <p className="main-wrapper--loading">
+          Loading...
+        </p>
       </div>
     );
   }

@@ -4,4 +4,23 @@
 	display: flex;
 	background: $off-white;
 	font-family: $content-font;
+
+	&--posts{
+		min-height: 100vh;
+		min-width: 35%;
+
+		padding: 2vw 0 0 2vw;
+	}
+
+	&--response{
+		// min-height: 100vh;
+		width: 100%;
+
+		display: flex;
+	}
+
+	&--loading{
+		margin: auto;
+		padding-top: 50vh;
+	}
 }

@@ -22,7 +22,6 @@ export class App extends React.Component < any, AppState > {
     };
 
     this.updateSelectedIndex = this.updateSelectedIndex.bind(this);
-    // console.log('Skylight: ', SkyLight);
   }
 
   componentDidMount () {

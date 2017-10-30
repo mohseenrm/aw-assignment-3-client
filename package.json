@@ -13,6 +13,7 @@
     "precommit": "yarn lint:fix",
     "postinstall": "yarn build",
     "serve": "node server --port=9040",
+    "start": "yarn serve",
     "watch": "\"node_modules/.bin/webpack\" --watch"
   },
   "dependencies": {

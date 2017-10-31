@@ -13,6 +13,11 @@ DESCRIPTION:
 This is a react application that interfaces with ElasticSearch box
 on AWS. Steps to setup local ElasticSearch, given at the end.
 
+INDEXING:
+Web pages crawled were seperated into individual wiki-items with a header and body.
+Each item was indexed seperately to improve search results and gain finer control
+over querying with ElasticSearch.
+
 *************************************************************************************
 
 USAGE:
